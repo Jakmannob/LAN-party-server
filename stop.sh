@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+then
+    echo "Please run as root."
+    exit 1
+fi
+
 ./resolve-interface.sh
 IFACE=$(cat interface.txt)
 echo $IFACE

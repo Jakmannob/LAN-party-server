@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+then
+    echo "Please run as root."
+    exit 1
+fi
+
 echo "Saving previous murmur configuration"
 mv /etc/murmur.ini /etc/murmur.ini.bak
 echo "Setting new murmur configuration"
