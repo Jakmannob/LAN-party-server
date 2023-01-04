@@ -19,4 +19,4 @@ subnet 10.0.0.0 netmask 255.255.255.0 {
 }" > /etc/dhcpd.conf
 
 echo "Starting DHCP server"
-systemctl start dhcpcd
+systemctl start dhcpd4
