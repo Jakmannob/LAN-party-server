@@ -1,22 +1,22 @@
 #!/bin/bash
 
-# Set this line to specify the interface manually
-#IFACE="eth0"
+./resolve-interface.sh
+IFACE=$(cat interface.txt)
 
-if [ -z "$IFACE" ]
-then
-    echo "No interface specified."
-    echo "Resolving interface..."
-    IFACE=$(ip -br l | awk '$1 !~ "lo|vir|wl" { print $1}')
-    echo "Found interfaces:"
-    echo $IFACE
-    # Use this line to split by newline
-    #IFACE=$(echo $IFACE | sed -n '1 p')
-    # Use this line to split by spaces
-    IFACE=$(echo $IFACE | cut -d' ' -f1)
-    echo "Using interface '$IFACE'"
-    echo "Please set the interface manually, if necessary."
-    echo ""
-else
-    echo "Using preset interface '$IFACE'"
-fi
+echo "Setting up interface $IFACE"
+ip link set up dev $IFACE
+ip addr add 10.0.0.1/24 dev $IFACE
+echo "Interface $IFACE set up with IP address 10.0.0.1"
+
+echo "Backing up DHCP configuration"
+mv /etc/dhcpd.conf /etc/dhcpd.conf.bak
+echo "Setting up new DHCP configuration"
+echo "option domain-name-servers 10.0.0.1;
+option subnet-mask 255.255.255.0;
+option routers 10.0.0.1;
+subnet 10.0.0.0 netmask 255.255.255.0 {
+    range 10.0.0.10 10.0.0.250;
+}" > /etc/dhcpd.conf
+
+echo "Starting DHCP server"
+systemctl start dhcpcd
