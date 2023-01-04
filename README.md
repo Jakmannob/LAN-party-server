@@ -5,4 +5,16 @@ A linux server that provides DHCP, voicechat and file-download for an offline LA
 ## Requirements for the server
 
 Currently, the server has to be running **Arch Linux**, with no firewall.
-If a firewall is active on the server, please **open TCP and UDP port 64738**.
+If a firewall is active on the server, please **open TCP and UDP port 64738** for mumble.
+
+## Managing the mumble server
+
+Once the mumble server is started, do the following as a client:
+
+1. Start your mumble client
+2. Create a mumble certificate using the certificate wizard
+3. Join the server at `10.0.0.1` (or by hostname of the LAN party server)
+4. Register your user at the server
+5. Disconnect from the server
+6. Reconnect to the server, but with username `SuperUser`
+7. If asked, enter the password (default: `dpsgkissinglanparty`) and connect

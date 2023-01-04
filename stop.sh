@@ -12,8 +12,19 @@ function terminate_DHCP {
     echo "Restoring DHCP configuration"
     mv /etc/dhcpd.conf.bak /etc/dhcpd.conf
     echo "Terminated DHCP"
-    echo ""
 }
 
+function terminate_murmur {
+    echo "Killing mumble server"
+    systemctl stop murmur
+    echo "Restoring murmur configuration"
+    mv /etc/murmur.ini.bak /etc/murmur.ini
+    echo "Terminated mumble server"
+}
+
+
 terminate_DHCP
+echo ""
+terminate_murmur
+echo ""
 echo "LAN party server fully shut down"
