@@ -17,10 +17,7 @@ echo "Interface $IFACE set up with IP address 10.0.0.1"
 echo "Backing up DHCP configuration"
 mv /etc/dhcpd.conf /etc/dhcpd.conf.bak
 echo "Setting up new DHCP configuration"
-echo "option domain-name-servers 10.0.0.1;
-option subnet-mask 255.255.255.0;
-option routers 10.0.0.1;
-subnet 10.0.0.0 netmask 255.255.255.0 {
+echo "subnet 10.0.0.0 netmask 255.255.255.0 {
     range 10.0.0.10 10.0.0.250;
 }" > /etc/dhcpd.conf
 
