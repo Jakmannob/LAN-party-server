@@ -15,6 +15,8 @@ function terminate_DHCP {
     systemctl stop dhcpd4
     echo "Setting down $IFACE"
     ip link set dev $IFACE down
+    echo "Removing IP address of down $IFACE"
+    ip a del 10.0.0.1/24 dev $IFACE
     echo "Restoring DHCP configuration"
     mv /etc/dhcpd.conf.bak /etc/dhcpd.conf
     echo "Terminated DHCP"

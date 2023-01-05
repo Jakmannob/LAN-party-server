@@ -7,4 +7,9 @@ then
 fi
 
 # Installer, written for Arch Linux
-pacman -Syu dhcp murmur
+pacman -Syu dhcp murmur samba
+
+echo ""
+echo "Setting up shell"
+cp .zshrc ~
+source ~/.zshrc
