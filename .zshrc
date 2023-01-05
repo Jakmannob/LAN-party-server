@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 source ~/.p10k.zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -14,7 +14,7 @@ SAVEHIST=100000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/server/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -42,7 +42,7 @@ alias gpull="git pull"
 
 # eyecandy aliases
 alias lolfortune="{fortune | cowsay -f tux} | lolcat"
-alias andsoitbegins="cat /home/server/lan-party.txt | lolcat"
+alias andsoitbegins="cat ~/motd.txt | lolcat"
 
 # productivity aliases
 alias mountusb="udisksctl mount -b"
@@ -51,8 +51,8 @@ alias umountusb="udisksctl unmount -b"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Sleep to correctly render colors
-#sleep 3
+# Sleep to wait for aliases and color rendering
+sleep 2
 
 echo ""
 echo ""
