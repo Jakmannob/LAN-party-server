@@ -7,7 +7,7 @@ then
 fi
 
 # Installer, written for Arch Linux
-pacman -Syu dhcp murmur samba
+pacman -Syu dhcp murmur samba avahi
 
 echo ""
 echo "Setting up directories"

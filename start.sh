@@ -10,4 +10,6 @@ fi
 echo ""
 ./mumble-server.sh
 echo ""
+./smb.sh
+echo ""
 echo "LAN party server fully started"

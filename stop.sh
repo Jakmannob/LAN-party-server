@@ -30,9 +30,26 @@ function terminate_murmur {
     echo "Terminated mumble server"
 }
 
+function terminate_samba {
+    echo "Killing smb daemon"
+    systemctl stop smb.service
+    echo "Killing nmb daemon"
+    systemctl stop nmb.service
+    echo "Killing wsdd daemon"
+    systemctl stop wsdd.service
+    echo "Killing avahi daemon"
+    systemctl stop avahi-daemon.service
+    
+    echo "Restoring old samba configuration"
+    cp /etc/samba/smb.conf.bak /etc/samba/smb.conf
+    echo "Terminated SMB share"
+}
+
 
 terminate_DHCP
 echo ""
 terminate_murmur
+echo ""
+terminate_samba
 echo ""
 echo "LAN party server fully shut down"
