@@ -10,10 +10,13 @@ fi
 pacman -Syu dhcp murmur samba
 
 echo ""
+echo "Setting up directories"
+mkdir ~/Installer
+mkdir ~/Tmp
+
 echo "Setting up MotD"
 cp motd.txt ~
 
-echo ""
 echo "Setting up shell"
 cp .zshrc ~
 source ~/.zshrc
