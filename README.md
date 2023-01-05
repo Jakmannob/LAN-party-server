@@ -25,3 +25,6 @@ Once the mumble server is started, do the following as a client:
 ## TODO
 
 - Add needed AUR packages to installer
+- Also, a user named `server` with passwd `lan` has to be created
+- Also, a user named `player` with passwd `lan` has to be created on the server to access SMB shares
+- Create +rw folders /home/server/Tmp and /home/server/Installer

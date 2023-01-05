@@ -4,17 +4,17 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-source ~/.p10k.zsh
+source /home/server/.p10k.zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=/home/server/.histfile
 HISTSIZE=10000
 SAVEHIST=100000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
+zstyle :compinstall filename '/home/server/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -42,7 +42,7 @@ alias gpull="git pull"
 
 # eyecandy aliases
 alias lolfortune="{fortune | cowsay -f tux} | lolcat"
-alias andsoitbegins="cat ~/motd.txt | lolcat"
+alias andsoitbegins="cat /home/server/motd.txt | lolcat"
 
 # productivity aliases
 alias mountusb="udisksctl mount -b"

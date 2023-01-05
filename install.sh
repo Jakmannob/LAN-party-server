@@ -11,12 +11,14 @@ pacman -Syu dhcp murmur samba avahi
 
 echo ""
 echo "Setting up directories"
-mkdir ~/Installer
-mkdir ~/Tmp
+sudo mkdir /home/player/Installer
+sudo chmod 666 /home/player/Installer
+sudo mkdir /home/player/Installer
+sudo chmod 666 /home/player/Installer
 
 echo "Setting up MotD"
-cp motd.txt ~
+cp motd.txt /home/server
 
 echo "Setting up shell"
-cp .zshrc ~
-source ~/.zshrc
+cp .zshrc /home/server
+source /home/server/.zshrc
