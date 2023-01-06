@@ -1,0 +1,5 @@
+[Unit]
+Description=Run LAN party setup as last command
+Requires=multi-user.target
+After=multi-user.target
+AllowIsolate=yes

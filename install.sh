@@ -37,7 +37,22 @@ systemctl start sshd.service
 echo ""
 
 echo "Configuring LAN-party service"
+echo "Setting up custom target"
+cp /home/server/Server/LAN-party-server/custom.target /etc/systemd/system/
+echo "Setting up lan party service"
 cp /home/server/Server/LAN-party-server/lan-party.service /etc/systemd/system/
+echo "Creating target directory"
+mkdir /etc/systemd/system/custom.target.wants
+echo "Linking lan party service to custom target"
+ln -s /etc/systemd/system/lan-party.service \
+/etc/systemd/system/custom.target.wants/lan-party.service
+echo "Reloading systemd"
+systemctl daemon-reload
+echo "Setting default systemd target to custom target"
+systemctl set-default custom.target
+echo "Applying target immediately"
+systemctl isolate custom.target
+
 echo "Enabling LAN-party service"
 systemctl enable lan-party.service
 echo "Starting LAN-party service"
