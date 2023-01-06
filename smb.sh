@@ -9,7 +9,7 @@ fi
 echo "Backing up old samba configuration"
 cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
 echo "Saving new samba configuration"
-cp smb.conf /etc/samba/smb.conf
+cp /home/server/Server/LAN-party-server/smb.conf /etc/samba/smb.conf
 
 echo "Starting smb service"
 systemctl start smb.service

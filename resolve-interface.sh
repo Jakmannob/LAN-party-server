@@ -3,7 +3,7 @@
 # Set this line to specify the interface manually, or save it to interface.txt
 #IFACE="eth0"
 
-if test -f "interface.txt"; then
+if test -f "/home/server/Server/LAN-party-server/interface.txt"; then
     exit
 fi
 
@@ -25,4 +25,4 @@ else
     echo "Using preset interface $IFACE"
 fi
 
-echo $IFACE > interface.txt
+echo $IFACE > /home/server/Server/LAN-party-server/interface.txt

@@ -6,10 +6,10 @@ then
     exit 1
 fi
 
-./dhcp-server.sh
+/home/server/Server/LAN-party-server/dhcp-server.sh
 echo ""
-./mumble-server.sh
+/home/server/Server/LAN-party-server/mumble-server.sh
 echo ""
-./smb.sh
+/home/server/Server/LAN-party-server/smb.sh
 echo ""
 echo "LAN party server fully started"

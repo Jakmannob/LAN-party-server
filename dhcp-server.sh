@@ -6,7 +6,7 @@ then
     exit 1
 fi
 
-./resolve-interface.sh
+/home/server/Server/LAN-party-server/resolve-interface.sh
 IFACE=$(cat interface.txt)
 
 echo "Setting up interface $IFACE"

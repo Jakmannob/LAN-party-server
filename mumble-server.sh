@@ -9,7 +9,7 @@ fi
 echo "Saving previous murmur configuration"
 mv /etc/murmur.ini /etc/murmur.ini.bak
 echo "Setting new murmur configuration"
-cp murmur.ini /etc/murmur.ini
+cp /home/server/Server/LAN-party-server/murmur.ini /etc/murmur.ini
 
 # I know, I've leaked the password, but if you've made it this far, you can have
 # it, no hard feelings
