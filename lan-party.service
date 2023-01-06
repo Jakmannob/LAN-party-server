@@ -1,10 +1,11 @@
 [Unit]
 Description=LAN-party starter service
-After=multi-user.target
+BindsTo=sys-subsystem-net-devices-enp3s6.device
+After=sys-subsystem-net-devices-enp3s6.device
 
 [Service]
 Type=simple
 ExecStart=/bin/zsh /home/server/Server/LAN-party-server/start.sh
 
 [Install]
-WantedBy=custom.target
+WantedBy=multi-user.target
