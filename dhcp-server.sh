@@ -7,7 +7,7 @@ then
 fi
 
 /home/server/Server/LAN-party-server/resolve-interface.sh
-IFACE=$(cat interface.txt)
+IFACE=$(cat /home/server/Server/LAN-party-server/interface.txt)
 
 echo "Setting up interface $IFACE"
 ip link set up dev $IFACE
