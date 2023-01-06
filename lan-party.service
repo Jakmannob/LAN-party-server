@@ -1,0 +1,9 @@
+[Unit]
+Description=LAN-party starter service
+
+[Service]
+Type=simple
+ExecStart=/bin/zsh /home/server/Server/LAN-party-server/start.sh
+
+[Install]
+WantedBy=multi-user.target

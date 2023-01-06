@@ -54,11 +54,11 @@ alias umountusb="udisksctl unmount -b"
 # Sleep to wait for aliases and color rendering
 sleep 2
 
-echo ""
-echo ""
-echo "The sudo password is 'lan'. Enter, if ready."
-cd /home/server/Server/LAN-party-server
-sudo /home/server/Server/LAN-party-server/start.sh
+#echo ""
+#echo ""
+#echo "The sudo password is 'lan'. Enter, if ready."
+#cd /home/server/Server/LAN-party-server
+#sudo /home/server/Server/LAN-party-server/start.sh
 
 andsoitbegins
 screenfetch
